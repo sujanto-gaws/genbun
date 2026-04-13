@@ -1,0 +1,7 @@
+
+{{- define "methods" }}
+// TableName overrides the default table name.
+func (m *{{ .ModelName }}) TableName() string {
+	return "{{ .TableName }}"
+}
+{{- end }}

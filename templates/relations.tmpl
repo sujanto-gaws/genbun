@@ -1,0 +1,7 @@
+{{- define "relations" }}
+{{- range .Relations }}
+
+	// {{ .Comment }}
+	{{ .Name }} {{ .Type }} {{ .Tag }}
+{{- end }}
+{{- end }}

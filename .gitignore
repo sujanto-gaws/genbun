@@ -1,0 +1,19 @@
+# Binaries
+genbun
+genbun.exe
+
+# Config file (optional)
+# genbun.yaml
+
+# Generated models
+internal/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

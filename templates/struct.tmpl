@@ -1,0 +1,14 @@
+{{- define "struct" }}
+// {{ .ModelName }} represents the {{ .TableName }} table.
+{{- if .Comment }}
+// {{ .Comment }}
+{{- end }}
+type {{ .ModelName }} struct {
+{{- range .Fields }}
+	{{ .Name }} {{ .Type }} `bun:"{{ .Tag }}"`
+{{- if .Comment }}
+	// {{ .Comment }}
+{{- end }}
+{{- end }}
+}
+{{- end }}
