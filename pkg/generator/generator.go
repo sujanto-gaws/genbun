@@ -196,7 +196,11 @@ func (g *ModelGenerator) createField(col database.ColumnInfo, primaryKey []strin
 	for _, pk := range primaryKey {
 		if pk == col.Name {
 			isPrimary = true
-			tagParts = append(tagParts, "pk", "autoincrement")
+			tagParts = append(tagParts, "pk")
+			// Only add autoincrement if the column is actually an identity/serial column
+			if col.IsIdentity {
+				tagParts = append(tagParts, "autoincrement")
+			}
 			break
 		}
 	}
